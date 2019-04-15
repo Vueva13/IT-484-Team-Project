@@ -7,3 +7,5 @@
 3. cd RideShare
 
 4. bundle install
+
+5. rails server -p $PORT -b $IP
