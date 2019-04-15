@@ -10,4 +10,8 @@
 
 5. bundle install
 
-6. rails server -p $PORT -b $IP
+6. rake db:create
+
+7. rake db:seed
+
+8. rails server -p $PORT -b $IP
