@@ -100,4 +100,8 @@ ActiveRecord::Schema.define(version: 20180420181757) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> 049ecf568d66ef986ba58544844d0e41d63e79b3
