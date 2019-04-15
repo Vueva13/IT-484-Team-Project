@@ -4,7 +4,7 @@
 
 2. git clone https://github.com/Vueva13/IT-484-Team_Purple.git
 
-3. cd IT-484-TEAM_PURPLE
+3. cd IT-484-Team_Purple
 
 4. cd RideShare
 
