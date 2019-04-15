@@ -1,4 +1,6 @@
 # IT-484-Team-Project
+# Team Purple
+# Steps to build on Cloud 9
 
 1. rvm install ruby-2.6.1
 
