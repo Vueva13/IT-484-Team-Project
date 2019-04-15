@@ -14,4 +14,6 @@
 
 7. rake db:seed
 
-8. rails server -p $PORT -b $IP
+8. rake db:migrate
+
+9. rails server -p $PORT -b $IP
