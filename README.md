@@ -4,8 +4,10 @@
 
 2. git clone https://github.com/Vueva13/IT-484-Team_Purple.git
 
-3. cd RideShare
+3. cd IT-484-TEAM_PURPLE
 
-4. bundle install
+4. cd RideShare
 
-5. rails server -p $PORT -b $IP
+5. bundle install
+
+6. rails server -p $PORT -b $IP
