@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
     
     def index
-        @post = Post.all.order('created_at DESC')
+        @post = Post.where(["title LIKE ?","%#{params[:search]}%"])
     end 
     
     def show
