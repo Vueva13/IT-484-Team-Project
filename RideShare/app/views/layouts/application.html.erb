@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<!-- HEADER NAVBAR -->
+<!--HEADER NAVBAR-->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="#">RideShare</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,20 +16,48 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="https://it484-team-project-jramczyk.c9users.io">Home<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="https://it484-team-project-jramczyk.c9users.io">Home</a>
+            </li>
+            <li class="nav-item active">
+              <!-- If the user is signed in, welcome them by username -->
+              <% if user_signed_in? %>
+              <a class="nav-link" style="color: #06ff3f;"><strong>Online</strong> <%= current_user.username %></a>
+              <% end %>
+            </li>
+            <li class="nav-item active">
+            <div class="dropdown show">
+              <a class="btn btn-secondary dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Account
+              </a>
+            
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <% if !user_signed_in? %>
+                <a class="dropdown-item" href="https://it484-team-project-jramczyk.c9users.io/users/sign_in" style="padding-bottom: 0px">Login</a>
+                <% end %>
+                <% if user_signed_in? %>
+                <a class="dropdown-item" href="https://it484-team-project-jramczyk.c9users.io/users/<%= current_user.id %>">My Profile</a>
+                <a class="dropdown-item" href="https://it484-team-project-jramczyk.c9users.io/users/edit">Settings</a>
+                <a class="dropdown-item" href="https://it484-team-project-jramczyk.c9users.io/posts/new">Create Post</a>
+                <hr>
+                <a><%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "dropdown-item" %></a>
+                <% end %>
+              </div>
+            </div>
             </li>
           </ul>
+          
           <!-- Begin Search Function-->
           <%= form_tag posts_path, :method => 'get', :class => 'form-inline mt-2 mt-md-0', style: "margin-right: 20px" do %>
             <%= text_field_tag :search, params[:search], class: 'form-control mr-sm-2', placeholder: "Search" %>
             <%= submit_tag "Search", class: 'btn btn-outline-success my-2 my-sm-0' %>
           <% end %>
           <!-- End Search Function-->
-
+          
           <!-- Begin Sign Up Link-->
           <div class="dropdown">
-          <a href="https://it484-team-project-jramczyk.c9users.io/users/sign_up" style="margin-right: 5px">Sign Up</a>
+          <a href="https://it484-team-project-jramczyk.c9users.io/users/sign_up" style="margin-right: 5px;">Sign Up</a>
           <!-- End Sign Up Link-->
+          
           </div>
         </div>
       </nav>
@@ -39,17 +67,23 @@
 
 
                       
-  
-<!-- BEGINNING SIDEBAR -->
-<div class="sidenav">
-  <a href="https://it484-team-project-jramczyk.c9users.io/posts/new">Create Post</a>
-  <a href="https://it484-team-project-jramczyk.c9users.io/users/sign_in" style="padding-bottom: 0px">Login</a>
-  <a style="padding-top: 0px"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></a>
-</div>
-<!-- ENDING SIDEBAR-->
+<!--RETIRED DO NOT UNCOMMENT OR EDIT-->
+<!--BEGINNING SIDEBAR-->
+<!--<div class="sidenav">-->
+  <!-- If the user is signed in, give them an option to view their profile -->
+<!--  <% if user_signed_in? %>-->
+<!--  <a href="https://it484-team-project-jramczyk.c9users.io/users/<%= current_user.id %>">My Profile</a>-->
+<!--  <a href="https://it484-team-project-jramczyk.c9users.io/users/edit">Settings</a>-->
+<!--  <% end %>-->
+<!--  <a href="https://it484-team-project-jramczyk.c9users.io/posts/new">Create Post</a>-->
+<!--  <a href="https://it484-team-project-jramczyk.c9users.io/users/sign_in" style="padding-bottom: 0px">Login</a>-->
+<!--  <a style="padding-top: 0px"><%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "padding-top" %></a>-->
+<!--</div>-->
+<!--ENDING SIDEBAR-->
       
 <%= yield %>
 
 </body>
 
 </html>
+
