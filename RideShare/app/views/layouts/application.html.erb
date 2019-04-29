@@ -21,7 +21,7 @@
             <li class="nav-item active">
               <!-- If the user is signed in, welcome them by username -->
               <% if user_signed_in? %>
-              <a class="nav-link" style="color: #06ff3f;"><strong>Online</strong> <%= current_user.username %></a>
+              <a class="nav-link" style="color: #06ff3f;"><strong>Online:</strong> <%= current_user.username %></a>
               <% end %>
             </li>
             <li class="nav-item active">
@@ -48,14 +48,14 @@
           
           <!-- Begin Search Function-->
           <%= form_tag posts_path, :method => 'get', :class => 'form-inline mt-2 mt-md-0', style: "margin-right: 20px" do %>
-            <%= text_field_tag :search, params[:search], class: 'form-control mr-sm-2', placeholder: "Search" %>
+            <%= text_field_tag :search, params[:search], class: 'form-control mr-sm-2', placeholder: "Search Post by Title" %>
             <%= submit_tag "Search", class: 'btn btn-outline-success my-2 my-sm-0' %>
           <% end %>
           <!-- End Search Function-->
           
           <!-- Begin Sign Up Link-->
           <div class="dropdown">
-          <a href="https://it484-team-project-jramczyk.c9users.io/users/sign_up" style="margin-right: 5px;">Sign Up</a>
+          <a href="https://it484-team-project-jramczyk.c9users.io/users/sign_up" style="margin-right: 5px; color:white">Sign Up</a>
           <!-- End Sign Up Link-->
           
           </div>
